@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Room\Room;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,3 +22,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/r1c1',[App\Http\Controllers\RoomController::class, 'room1class1'])->name('r1c1');
