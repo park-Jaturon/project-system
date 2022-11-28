@@ -69,7 +69,20 @@
                         <tr>
                             <td>John</td>
                             <td>Doe</td>
-                            <td > <i class="bi bi-0-circle"></i></td>
+                            <td>
+                                <div class="rating-css">  
+                                        <input type="radio" value="1" name="product_rating" checked id="rating1">
+                                        <label for="rating1" class="bi bi-star-fill"></label>
+                                        <input type="radio" value="2" name="product_rating" id="rating2">
+                                        <label for="rating2" class="bi bi-star-fill"></label>
+                                        <input type="radio" value="3" name="product_rating" id="rating3">
+                                        <label for="rating3" class="bi bi-star-fill"></label>
+                                        <input type="radio" value="4" name="product_rating" id="rating4">
+                                        <label for="rating4" class="bi bi-star-fill"></label>
+                                        <input type="radio" value="5" name="product_rating" id="rating5">
+                                        <label for="rating5" class="bi bi-star-fill"></label>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Mary</td>
@@ -85,25 +98,6 @@
                 </table>
             </div>
 
-        </div>
-        <div class="row">
-<div class="col">
-    <div class="stars">
-        <div class="stars-ghost">
-           <div class="star"><i class="fa fa-star"></i></div>
-           <div class="star"><i class="fa fa-star"></i></div>
-           <div class="star"><i class="fa fa-star"></i></div>
-           <div class="star"><i class="fa fa-star"></i></div>
-           <div class="star"><i class="fa fa-star"></i></div>
-        </div>
-        <div class="star"><i class="fa fa-star-o"></i></div>
-        <div class="star"><i class="fa fa-star-o"></i></div>
-        <div class="star"><i class="fa fa-star-o"></i></div>
-        <div class="star"><i class="fa fa-star-o"></i></div>
-        <div class="star"><i class="fa fa-star-o"></i></div>
-        <div class="info">Hover Stars</div>
-     </div>
-</div>
         </div>
     </div>
 @endsection
