@@ -36,7 +36,7 @@
                                 แบบประเมิน
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{route('g1')}}">อบ 1/2</a></li>
+                                <li><a class="dropdown-item" href="#">อบ 1/2</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -54,26 +54,50 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">ยินดีตอนรับ....</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
+ 
+    <div class="row">
+        <div class="col-lg-8 m-auto">
+            <!-- การสร้าง Carousel -->
+            <div class="carousel slide" id="slider1" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <button  data-bs-target="#slider1" data-bs-slide-to="0"></button>
+                        <button  data-bs-target="#slider1" data-bs-slide-to="1"></button>
+                        <button  class="active" data-bs-target="#slider1" data-bs-slide-to="2"></button>
+                        <button  data-bs-target="#slider1" data-bs-slide-to="3"></button>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <img src="{{URL('images\u1\LINE_ALBUM_หน่วยใบไม้_๒๒๑๑๒๔_20.jpg')}}" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                            
                             </div>
-                        @endif
-
-                        ครูประจำห้อง
-                        <img src="{{ URL('images\135869013_2691228581189754_3282395879552809327_o.jpg') }}"
-                            class="rounded float-start" style="width: 200px;">
-                        <img src="{{ URL('images\137006833_2691228827856396_2474078375956669754_o.jpg') }}"
-                            class="rounded float-end" style="width: 200px;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.pixabay.com/photo/2020/06/15/01/06/sunset-5299957__340.jpg" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                               
+                            </div>
+                        </div>
+                        <div class="carousel-item active">
+                            <img src="https://cdn.pixabay.com/photo/2021/01/18/17/46/sunset-5928907__340.jpg" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.pixabay.com/photo/2021/01/21/14/10/egret-5937499__340.jpg" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <!-- ควบคุมการ Slide ผ่านปุ่ม -->
+                    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#slider1">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#slider1">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
             </div>
         </div>
     </div>

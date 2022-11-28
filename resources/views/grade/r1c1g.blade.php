@@ -36,7 +36,7 @@
                                 แบบประเมิน
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{route('g1')}}">อบ 1/2</a></li>
+                                <li><a class="dropdown-item" href="{{ route('g1') }}">อบ 1/2</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -54,27 +54,56 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+    <div class="container text-center">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">ยินดีตอนรับ....</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        ครูประจำห้อง
-                        <img src="{{ URL('images\135869013_2691228581189754_3282395879552809327_o.jpg') }}"
-                            class="rounded float-start" style="width: 200px;">
-                        <img src="{{ URL('images\137006833_2691228827856396_2474078375956669754_o.jpg') }}"
-                            class="rounded float-end" style="width: 200px;">
-                    </div>
-                </div>
+            <div class="col-8">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td > <i class="bi bi-0-circle"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td>Moe</td>
+                            <td>mary@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>July</td>
+                            <td>Dooley</td>
+                            <td>july@example.com</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+
+        </div>
+        <div class="row">
+<div class="col">
+    <div class="stars">
+        <div class="stars-ghost">
+           <div class="star"><i class="fa fa-star"></i></div>
+           <div class="star"><i class="fa fa-star"></i></div>
+           <div class="star"><i class="fa fa-star"></i></div>
+           <div class="star"><i class="fa fa-star"></i></div>
+           <div class="star"><i class="fa fa-star"></i></div>
+        </div>
+        <div class="star"><i class="fa fa-star-o"></i></div>
+        <div class="star"><i class="fa fa-star-o"></i></div>
+        <div class="star"><i class="fa fa-star-o"></i></div>
+        <div class="star"><i class="fa fa-star-o"></i></div>
+        <div class="star"><i class="fa fa-star-o"></i></div>
+        <div class="info">Hover Stars</div>
+     </div>
+</div>
         </div>
     </div>
 @endsection

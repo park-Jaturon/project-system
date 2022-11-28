@@ -24,3 +24,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/r1c1',[App\Http\Controllers\RoomController::class, 'room1class1'])->name('r1c1');
+
+Route::get('/u1',[App\Http\Controllers\RoomController::class, 'unit1'])->name('u1');
+
+Route::get('/gr1c1',[App\Http\Controllers\GradeController::class, 'r1c1grade'])->name('g1');
