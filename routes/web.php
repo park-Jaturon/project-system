@@ -19,6 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/information', function () {
+    return view('teacher.information');
+});
+
+Route::get('/posts', function () {
+    return view('BlogPost.posts');
+});
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -9,7 +9,7 @@ class RoomController extends Controller
   
     public function room1class1()
     {
-        return view('room/r1c1');
+        return view('room.r1c1');
     }
 
     public function room1class2()
@@ -19,6 +19,6 @@ class RoomController extends Controller
 
     public function unit1()
     {
-        return view('room/unit1');
+        return view('room.unit1');
     }
 }

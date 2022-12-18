@@ -15,7 +15,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
+
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="{{ url('/information') }}">ประวัตินักเรียน</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="{{ url('/posts') }}">ประกาศ</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -36,7 +45,7 @@
                                 แบบประเมิน
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{route('g1')}}">อบ 1/2</a></li>
+                                <li><a class="dropdown-item" href="{{ route('g1') }}">อบ 1/2</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
