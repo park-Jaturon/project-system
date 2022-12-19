@@ -1,28 +1,36 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center align-items-center g-2">
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-        <div class="col">Column</div>
-    </div>
-    <div class="row">
-      <div class="col-4">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">Title</h3>
-            <p class="card-text">Text</p>
-          </div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Quote
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>A well-known quote, contained in a blockquote element.</p>
+                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Quote
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>A well-known quote, contained in a blockquote element.</p>
+                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source
+                                    Title</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col">Column</div>
         </div>
-      </div>
-      <div class="col-4">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">Title</h3>
-            <p class="card-text">Text</p>
-          </div>
-        </div>
-      </div>
     </div>
-</div>
 @endsection

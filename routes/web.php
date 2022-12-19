@@ -24,13 +24,14 @@ Route::get('/information', function () {
 });
 
 Route::get('/posts', function () {
-    return view('BlogPost.posts');
+    return view('BlogPost.posts')->name('posts');
 });
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/teacher/home', [App\Http\Controllers\HomeController::class, 'index'])->name('teacher.home')->middleware('IsTeacher');
 
 Route::get('/r1c1',[App\Http\Controllers\RoomController::class, 'room1class1'])->name('r1c1');
 
