@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class LoginController extends Controller
 {
-    /*
+     /*
     |--------------------------------------------------------------------------
     | Login Controller
     |--------------------------------------------------------------------------
@@ -36,5 +39,25 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    public  function login(Request $request)
+    {
+        $input = $request->all();
+
+        $this->validate($request,
+            ['name'  => 'required'],
+            ['password' => 'required']
+        );
+        if (Auth::attempt(array('name'=>$input['name'], 'password' => $input['password'])))
+        {
+            if (Auth::user()->caste == 'teacher') 
+            {
+                return redirect()->route('teacher.home'); 
+            }else{
+                return redirect()->route('home');
+            }
+        }else{
+            return redirect()->route('login')->with('error','รหัสไม่ถูกต้อง');
+        }
     }
 }
