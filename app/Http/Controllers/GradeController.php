@@ -8,6 +8,6 @@ class GradeController extends Controller
 {
     public function r1c1grade()
     {
-        return view('grade/r1c1g');
+        return view('grade.r1c1g');
     }
 }
