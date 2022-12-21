@@ -59,7 +59,7 @@
                             <div class="row mb-3">
                                 <label for="caste" class="col-md-4 col-form-label text-md-end">ตำแหน่ง</label>
                                 <div class="col-md-6">
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" name="caste" value="{{ old('caste') }}" aria-label="Default select example">
                                         <option selected>--ตำแหน่ง--</option>
                                         <option value="teacher">ครู</option>
                                         <option value="parents">ผู้ปกครอง</option>

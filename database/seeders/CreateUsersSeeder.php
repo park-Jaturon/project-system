@@ -21,11 +21,9 @@ class CreateUsersSeeder extends Seeder
             'name' => 'teacher1',
             'password' => Hash::make('t123456789'),
             'caste' =>  'teacher',
-        ]);
-
-        DB::table('users') -> insert([
+        ],[
             'name' => 'users1',
-            'password' => Hash::make('s123456789'),
+            'password' => Hash::make('u123456789'),
             'caste' =>  'parents',
         ]);
     }
