@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\Timecards;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
+
 
 class TeacherController extends Controller
 {
@@ -16,7 +19,8 @@ class TeacherController extends Controller
 
     public function information()
     {
-        return view('teacher.information');
+        $data = new  Student();
+        return view('teacher.information',compact('data'));
     }
 
     public function store(Request $request)
@@ -47,5 +51,28 @@ class TeacherController extends Controller
         $data = Student::findOrFail($id);
         
         return view('teacher.information',compact('data'));
+    }
+
+    public function check(){
+        $students = Student::all();
+        return view('teacher.studentcheck',compact('students'));
+    }
+
+    public function checkin($id){
+        //dd(date('d-m-Y'));
+        $check = new Timecards();
+        $check ->students_id = $id;
+        $check -> c_date = date('Y-m-d');
+        $check ->c_in = date('H:i:s');
+        $check ->c_out = date('H:i:s');
+        $check->save();
+        return redirect()->back();
+    }
+    public function checkout($id){
+        //dd($id);
+        $check = DB::table('timecards')
+        ->where('c_date','=','MAX(c_date)')
+        ->update(['c_out' => date('H:i:s')]);
+        return redirect()->back();
     }
 }

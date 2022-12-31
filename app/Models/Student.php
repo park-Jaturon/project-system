@@ -28,5 +28,9 @@ class Student extends Model
         'telephone_number_bus',
         'habitations',
     ];
+    public function information(){
 
+        return $this->hasOne(Student::class,'students_id','id');
+         // return $this->belongsTo(Student::class);
+    }
 }

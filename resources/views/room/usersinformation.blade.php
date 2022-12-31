@@ -21,18 +21,18 @@
                                 <div class="col">
                                     <label for="prefix" class="form-label">คำนำหน้าชื่อ</label>
                                     <select class="form-select" name="prefix"  aria-label="Default select example">
-                                        <option selected  >{{ old('--คำนำหน้าชื่อ--',$data->prefix_name) }}</option>
+                                        <option selected  >{{$datamyinformation->prefix_name}}</option>
                                         <option value="เด็กชาย">เด็กชาย</option>
                                         <option value="เด็กหญิง">เด็กหญิง</option>
                                     </select>
                                 </div>
                                 <div class="col">
                                     <label for="firstname" class="form-label">ชื่อ</label>
-                                    <input type="text" name="firstname" id="firstname" value="{{old('firstname',$data->first_name)}}" class="form-control">
+                                    <input type="text" name="firstname" id="firstname"  class="form-control">
                                 </div>
                                 <div class="col">
                                     <label for="lastname" class="form-label">นามสกุล</label>
-                                    <input type="text" name="lastname" id="lastname" class="form-control" value="{{old('lastname',$data['last_name'])}}">
+                                    <input type="text" name="lastname" id="lastname" class="form-control" >
                                 </div>
                             </div>
                             {{-- form-สัญลักษณ์-วันเกิด-รหัสประจำตัว--}}
@@ -43,13 +43,13 @@
                                         <span class="input-group-text" id="basic-addon1">
                                             <i class="bi bi-calendar3"></i>
                                         </span>
-                                        <input type="text" id="datepicker" name="birthdays" class="form-control " value="{{old('birthdays',$data->birthdays)}}">
+                                        <input type="text" id="datepicker" name="birthdays" class="form-control " >
                                     </div>
                                 </div>
                                 <div class="col">
                                     <label for="symbol" class="form-label">สัญลักษณ์</label>
                                     <select class="form-select" name="symbol">
-                                        <option selected >{{ old('symbol',$data->symbol) }}</option>
+                                        <option selected ></option>
                                         <option value="ร่ม">ร่ม</option>
                                         <option value="บ้าน">บ้าน</option>
                                         <option value="ลูกบอล">ลูกบอล</option>
@@ -79,7 +79,7 @@
                                     <div class="mb-3">
                                         <label for="idtags" class="form-label">รหัสประจำตัว</label>
                                         <input type="text" name="idtags" id="idtags" class="form-control"
-                                        value="{{old('idtags',$data->id_tags)}}">
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -87,12 +87,12 @@
                             <div class="row justify-content-center align-items-center g-2 mb-3">
                                 <div class="col">
                                     <label for="parents1" class="form-label">ชื่อ – นามสกุล (บิดา)</label>
-                                    <input type="text" name="parents1" id="parents1" class="form-control" value="{{old('parents1',$data->parents1)}}">
+                                    <input type="text" name="parents1" id="parents1" class="form-control" >
                                 </div>
                                 <div class="col">
                                     <label for="parents2" class="form-label">ชื่อ – นามสกุล (มารดา)</label>
                                     <input type="text" name="parents2" id="parents2" class="form-control"
-                                    value="{{old('parents2',$data->parents2)}}">
+                                    >
                                 </div>
                             </div>
                             {{-- form-เบอร์ติดต่อ --}}
@@ -100,19 +100,19 @@
                                 <div class="col">
                                     <label for="telephonenumberparents1" class="form-label">เบอร์โทรมารดา</label>
                                     <input type="text" name="telephonenumberparents1" id="telephonenumberparents1"
-                                        class="form-control" value="{{old('telephonenumberparents1',$data->telephone_number_parents1)}}">
+                                        class="form-control" >
 
                                 </div>
                                 <div class="col">
                                     <label for="telephonenumberparents2" class="form-label">เบอร์โทรบิดา</label>
                                     <input type="text" name="telephonenumberparents2" id="telephonenumberparents2"
-                                        class="form-control" value="{{old('telephonenumberparents2',$data->telephone_number_parents2)}}">
+                                        class="form-control" >
 
                                 </div>
                                 <div class="col">
                                     <label for="telephonenumberbus" class="form-label">เบอร์โทรถรับส่ง</label>
                                     <input type="text" name="telephonenumberbus" id="telephonenumberbus"
-                                        class="form-control" value="{{old('telephonenumberbus',$data->telephone_number_bus)}}">
+                                        class="form-control" >
 
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                             <div class="row justify-content-center align-items-center g-2 mb-3">
                                 <div class="col">
                                     <label for="exampleFormControlTextarea1" class="form-label">ที่อยู่</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="habitations" rows="3" >{{old('habitations',$data->habitations)}}</textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="habitations" rows="3" ></textarea>
                                 </div>
 
                             </div>

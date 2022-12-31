@@ -17,11 +17,24 @@
                             </div>
                         @endif
 
-                        ครูประจำห้อง
-                        <img src="{{ URL('images\135869013_2691228581189754_3282395879552809327_o.jpg') }}"
+                       
+                        <div class="row justify-content-center align-items-center g-2 mb-2">
+                            <div class="col"></div>
+                            <div class="col"> <h3>ครูประจำห้อง</h3></div>
+                            <div class="col"></div>
+                        </div>
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col"> 
+                                <img src="{{ URL('images\ครูประจำห้อง.jpg') }}"
                             class="rounded float-start" style="width: 200px;">
-                        <img src="{{ URL('images\137006833_2691228827856396_2474078375956669754_o.jpg') }}"
-                            class="rounded float-end" style="width: 200px;">
+                            
+                        </div>
+                            
+                            <div class="col"><img src="{{ URL('images\ผู้ช้วยครู.jpg') }}"
+                                class="rounded float-end" style="width: 200px;"></div>
+                        </div>
+                       
+                        
                     </div>
                 </div>
             </div>

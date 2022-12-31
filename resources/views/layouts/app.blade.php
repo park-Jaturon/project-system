@@ -27,6 +27,9 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="i18n/datepicker-th.js"></script>
 
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 </head>
 
 <body>
@@ -100,12 +103,30 @@
                     <div class="offcanvas-body">
 
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="{{ route('teacher.home') }}">ประวัตินักเรียน</a>
-                            </li>
+                            @auth
+                                @if (Auth::user()->caste == 'teacher')
+                                    <li class="nav-item">
+                                        <a class="nav-link active"
+                                            aria-current="page"href="{{ route('teacher.home') }}">ประวัตินักเรียน</a>
+
+                                    </li>
+                                @else
+                                    <li class="nav-item">
+                                        <a class="nav-link active"
+                                            aria-current="page"href="{{ route('r.myinformation') }}">ประวัติของฉัน</a>
+
+                                    </li>
+                                @endif
+                            @endauth
+
+
+
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ url('/posts') }}">ประกาศ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"
+                                    href="{{ url('/teacher/check') }}">ลงเวลา</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button"
