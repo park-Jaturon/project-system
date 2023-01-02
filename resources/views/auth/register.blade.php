@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ url('register') }}">
                             @csrf
 
                             <div class="row mb-3">
@@ -57,13 +57,10 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="caste" class="col-md-4 col-form-label text-md-end">ตำแหน่ง</label>
+                                <label for="caste" class="col-md-4 col-form-label text-md-end">studentid</label>
                                 <div class="col-md-6">
-                                    <select class="form-select" name="caste" value="{{ old('caste') }}" aria-label="Default select example">
-                                        <option selected>--ตำแหน่ง--</option>
-                                        <option value="teacher">ครู</option>
-                                        <option value="parents">ผู้ปกครอง</option>
-                                      </select>
+                                    <input id="password-confirm" type="text" class="form-control"
+                                    value="{{$id}}" name="id" required autocomplete="new-password">
                                 </div>
                             </div>
 

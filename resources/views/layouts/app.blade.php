@@ -96,7 +96,7 @@
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">ระบบอะไรสักอย่าง</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">ระบบติดตามพฤติกรรมเด็กเล็ก</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
@@ -124,10 +124,21 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ url('/posts') }}">ประกาศ</a>
                             </li>
+                            {{-- ลงเวลา --}}
+                            @auth
+                            @if (Auth::user()->caste == 'teacher')
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page"
                                     href="{{ url('/teacher/check') }}">ลงเวลา</a>
                             </li>
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                        aria-current="page"href="{{ route('r.mytimecards') }}">ประวัติลงเวลา</a>
+
+                                </li>
+                            @endif
+                        @endauth
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">

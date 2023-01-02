@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use App\Models\Timecards;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
@@ -14,7 +15,11 @@ class TeacherController extends Controller
     public function teacherindex()
     {
         $students = Student::all();
-        return view('teacher.studentmanage',['student'=>$students]);
+        $datamyinformation = DB::table('users')
+        ->join('students','users.students_id','=','students.id')
+        //->select('users.name','students.prefix_name','students.first_name','students.last_name')
+        ->get();
+        return view('teacher.studentmanage',compact('students','datamyinformation'));
     }
 
     public function information()
@@ -55,7 +60,8 @@ class TeacherController extends Controller
 
     public function check(){
         $students = Student::all();
-        return view('teacher.studentcheck',compact('students'));
+        $check  = Timecards::all();
+        return view('teacher.studentcheck',compact('students','check'));
     }
 
     public function checkin($id){
@@ -64,15 +70,13 @@ class TeacherController extends Controller
         $check ->students_id = $id;
         $check -> c_date = date('Y-m-d');
         $check ->c_in = date('H:i:s');
-        $check ->c_out = date('H:i:s');
         $check->save();
         return redirect()->back();
     }
     public function checkout($id){
         //dd($id);
-        $check = DB::table('timecards')
-        ->where('c_date','=','MAX(c_date)')
-        ->update(['c_out' => date('H:i:s')]);
+         Timecards::where('students_id',$id)->where('c_date',date('Y-m-d'))
+         ->update(['c_out' => date('H:i:s')]);
         return redirect()->back();
     }
 }

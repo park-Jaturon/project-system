@@ -30,10 +30,16 @@ class RoomController extends Controller
     {
         $datamyinformation = DB::table('users')
         ->join('students','users.students_id','=','students.id')
-        //->select('users.name','students.prefix_name','students.first_name','students.last_name')
+        ->where('students.id', '=', auth()->User()->students_id)
         ->get();
-        //dd($datamyinformation);
-        // return view('room.usersinformation',compact('datamyinformation'));
-        return $datamyinformation;
+        return view('room.usersinformation',compact('datamyinformation'));
+    }
+
+    public function recordmycardstime(){
+        $datamycardstime = DB::table('timecards')
+        ->join('users','timecards.students_id','=','users.students_id')
+        ->where('timecards.students_id', '=', auth()->User()->students_id)
+        ->get();
+        return view('room.cardstimestudents',compact('datamycardstime'));
     }
 }

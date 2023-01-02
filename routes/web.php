@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
@@ -37,7 +37,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/r1c1',[RoomController::class, 'room1class1'])->name('r1c1');
 Route::get('/myinformation',[RoomController::class, 'usersmyinformation'])->name('r.myinformation');
-
+Route::get('mytimecards',[RoomController::class, 'recordmycardstime'])->name('r.mytimecards');
 Route::get('/u1',[RoomController::class, 'unit1'])->name('u1');
 
 Route::get('/gr1c1',[GradeController::class, 'r1c1grade'])->name('g1');
@@ -50,6 +50,9 @@ Route::get('/teacher/checkin/{id}/store',[TeacherController::class, 'checkin'])-
 Route::get('/teacher/checkout/{id}/store',[TeacherController::class, 'checkout'])->name('checkout');
 Route::get('/teacher/addpots',[PotsController::class, 'addpots'])->name('addpost');
 Route::post('add-post',[PotsController::class, 'store']);
+Route::get('/teacher/post/{id}/edit',[PotsController::class, 'edit']);
+Route::get('/teacher/post/{id}/delete',[PotsController::class, 'delete']);
 Route::post('add-information',[TeacherController::class, 'store']);
 
-//Route::post('registration',[RegisterController::class,'store']);
+Route::get('register/{id}',[RegisterController::class,'showRegistrationForm']);
+Route::post('register',[RegisterController::class,'create']);

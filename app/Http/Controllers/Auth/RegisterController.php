@@ -41,20 +41,20 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        // $this->middleware('guest');
     }
 
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    protected function validator(Request $request)
     {
-        return Validator::make($data, [
+        $request->validate( [
             'name' => ['required', 'string', 'max:255'],
-            'caste' => ['required', 'string','max:255'],
+            'id'=> ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -62,16 +62,18 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  \Illuminate\Http\Request  $request
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        //dd($data);
+       // dd($request);
         return User::create([
-            'name' => $data['name'],
-            'caste' => $data['caste'],
-            'password' => Hash::make($data['password']),
+            'name' => 'name',
+            'students_id' => 'id',
+            'caste'=> "parents",
+            'password' => Hash::make($request['password']),
         ]);
+        return redirect('teacher/home'); 
     }
 }

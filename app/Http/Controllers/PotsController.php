@@ -14,7 +14,8 @@ class PotsController extends Controller
     }
 
     public function addpots(){
-        return view('BlogPost.addpots');
+        $data = new  Post();
+        return view('BlogPost.addpots',compact('data'));
     }
 
     public function store(Request $request){
@@ -25,5 +26,17 @@ class PotsController extends Controller
         $posts-> user_id = Auth::user()->id;
         $posts->save();
         return redirect()->back()->with('success','บันทึกข้อมูลเสร็จสิ้น');
+    }
+
+    public  function edit($id){
+        $data = Post::findOrFail($id);
+        //dd($data);
+        return view('BlogPost.addpots',compact('data'));
+    }
+
+    public function delete($id){
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->back();
     }
 }
